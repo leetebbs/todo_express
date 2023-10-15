@@ -24,9 +24,9 @@ app.use(cors());
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-})
+app.get("/tester", cors(), (req, res) => {
+  res.json("Hello World!");
+});
 
 app.post("/newUser", async (req, res) => {
   try {
