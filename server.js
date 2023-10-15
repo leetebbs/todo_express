@@ -24,6 +24,10 @@ app.use(cors());
 
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+})
+
 app.post("/newUser", async (req, res) => {
   try {
     const isEmail = await User.findOne({ email: req.body.email });
